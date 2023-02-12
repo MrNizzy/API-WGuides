@@ -4,11 +4,11 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
 
-const PORT = process.env.PORT || 4208;
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors({ origin: '*' }));
 
 // SQLite connection
 const db = new sqlite3.Database('wguides.db', (err) => {
@@ -18,7 +18,7 @@ const db = new sqlite3.Database('wguides.db', (err) => {
     console.log('Connected to the WGuides database.');
 });
 
-app.use(favicon('./public/favicon.ico'));
+app.use(favicon('./public/favicon.svg'));
 app.use(require('./app.routes')(db));
 
 /* This is a middleware function that is executed when the requested resource is not found. */
