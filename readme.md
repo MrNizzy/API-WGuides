@@ -6,7 +6,7 @@
 
 ## View deploy web
 
-[![Go to web deploy](https://img.shields.io/badge/Go%20to%20web-API%20WGuides-b62d2e?style=for-the-badge)](https://wguides.netlify.app/ "View deploy")
+[![Go to web deploy](https://img.shields.io/badge/Go%20to%20web-API%20WGuides-b62d2e?style=for-the-badge)](https://wguides.fly.dev/ "View deploy")
 
 ## Local development deployment
 
@@ -22,4 +22,4 @@ npm install
 npm start
 ```
 
-Navigate to `http://localhost:4208/`
+Navigate to `http://localhost:8080/`
