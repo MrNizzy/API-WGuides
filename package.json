@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node app.js --watch",
     "nodemon": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"**/*.js\"",
+    "lint": "eslint \"**/*.js\"",
+    "lint-fix": "eslint --fix \"**/*.js\""
   },
   "keywords": [],
   "author": "MrNizzy",
@@ -17,5 +20,9 @@
     "nodemon": "^2.0.20",
     "serve-favicon": "^2.5.0",
     "sqlite3": "^5.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "prettier": "^2.8.4"
   }
 }
