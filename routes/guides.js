@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-module.exports = function(db) {
+module.exports = function (db) {
     router.get('/api/guides/:id?', (req, res) => {
         let id = req.params.id;
         let sql = 'SELECT * FROM class_guides';

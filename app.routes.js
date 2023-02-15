@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-module.exports = function(db){
+module.exports = function (db) {
     // Routes
-    router.get('/', (req, res) => {
+    router.get('/', (_req, res) => {
+        // eslint-disable-next-line no-undef
         res.sendFile(path.join(__dirname + '/index.html'));
     });
 
@@ -18,5 +19,5 @@ module.exports = function(db){
     router.use(require('./routes/glyphs')(db));
     router.use(require('./routes/races')(db));
 
-    return router
-}
+    return router;
+};

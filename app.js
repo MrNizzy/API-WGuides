@@ -4,13 +4,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
 
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors({ origin: '*' }));
 
-// SQLite connection
 const db = new sqlite3.Database('wguides.db', (err) => {
     if (err) {
         console.error(err.message);
@@ -21,8 +21,7 @@ const db = new sqlite3.Database('wguides.db', (err) => {
 app.use(favicon('./public/favicon.svg'));
 app.use(require('./app.routes')(db));
 
-/* This is a middleware function that is executed when the requested resource is not found. */
-app.use(function (req, res, next) {
+app.use(function (_req, res) {
     res.status(404).send('Unable to find the requested resource!');
 });
 
